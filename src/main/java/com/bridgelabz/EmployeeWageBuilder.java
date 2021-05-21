@@ -1,8 +1,21 @@
 package com.bridgelabz;
 
-public class EmployeeWageBuilder {
-    public static void main(String[] arg)
+abstract class EmployeeWageBuilder
+{
+    int IS_PRESENT=1;
+    double Employee_check;
+    public abstract void random_generator(int var);//abstract method
+    public static void main(String[] args)
     {
-        System.out.println("  Welcome to employee wage computation program  ");
+        EmployeeWageBuilder object = new B();
+        object.random_generator(2);
+        if (object.Employee_check == object.IS_PRESENT)
+        {
+        System.out.println("Employee is present");
+        } else
+        {
+        System.out.println("Employee is absent");
+        }
     }
+
 }
