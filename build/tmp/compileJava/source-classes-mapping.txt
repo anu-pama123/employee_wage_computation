@@ -1,4 +1,2 @@
-com/bridgelabz/B.java
- com.bridgelabz.B
 com/bridgelabz/EmployeeWageBuilder.java
  com.bridgelabz.EmployeeWageBuilder
