@@ -6,7 +6,6 @@ public class EmployeeWageBuilder {
     private static double Employee_Wage;
     public static int Employee_wage=0;
     private static double Employee_check;
-
     public static int random_generator(int wagePerHr, int maxHr, int maxDay)// method 1
     {
         int empHR = 0;
