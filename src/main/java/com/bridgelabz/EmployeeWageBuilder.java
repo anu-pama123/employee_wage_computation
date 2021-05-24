@@ -1,33 +1,30 @@
 package com.bridgelabz;
 public class EmployeeWageBuilder
 {
-    public  static final int isFullTime = 1;
-    public  static final int isPartTime = 2;
-    private  static double employeeWage;
-    private  static double employeeCheck;
-    public static int randomGenerator(int wagePerHr, int maxHr, int maxDay) // method
-    {
         int empHR = 0;
+    public int randomGenerator(String companyName, int wagePerHr, int maxHr, int maxDay) // method
+    {
         int empWage = 0;
         int totalWorkingHr=0;
         int day=0;
+
+        double employeeCheck;
         while (totalWorkingHr < maxHr && day < maxDay)
         {
             employeeCheck = Math.floor((Math.random() * 10)) % 3;
             switch ((int) employeeCheck)
             {
-                case isFullTime:
-                    empHR = 8;
+                case 1: // full time
+                    this.empHR = 8;
                     break;
-                case isPartTime:
-                    empHR = 4;
+                case 2: //part time
+                    this.empHR = 4;
                     break;
                 default:
-                    empHR = 0;
+                    this.empHR = 0;
                     break;
             }
             empWage = empWage + (wagePerHr * empHR);
-            System.out.println("Daily employee wage = " + empWage);
             day++;
             totalWorkingHr = totalWorkingHr + empHR;
         }
@@ -36,8 +33,11 @@ public class EmployeeWageBuilder
     }
         public static void main(String[] args)
         {
-            employeeWage=EmployeeWageBuilder.randomGenerator(20,100,20);//method calling
-            System.out.println("Monthly employee wage = " + employeeWage);
+            EmployeeWageBuilder object=new EmployeeWageBuilder();
+            int infosysResult=object.randomGenerator("INFOSYS", 20,100,200);//method calling
+            System.out.println("Monthly employee wage in INFOSYS = " + infosysResult);
+            int tcsResult=object.randomGenerator("TCS", 30,100,200);
+            System.out.println("Monthly employee wage in TCS = " + tcsResult);
         }
 
 }
