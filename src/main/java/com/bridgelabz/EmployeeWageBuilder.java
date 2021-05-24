@@ -7,12 +7,14 @@ public class EmployeeWageBuilder {
     public static int Employee_wage=0;
     private static double Employee_check;
 
-    public static int random_generator(int wagePerHr)// method 1
+    public static int random_generator(int wagePerHr, int maxHr, int maxDay)// method 1
     {
         int empHR = 0;
         int empWage = 0;
         int Employee_wage = 0;
-        for (int day = 1; day <= 20; day++) 
+        int totalWorkingHr=0;
+        int day=0;
+        while (totalWorkingHr < maxHr && day < maxDay)
         {
             Employee_check = Math.floor((Math.random() * 10)) % 3;
             switch ((int) Employee_check) {
@@ -27,15 +29,16 @@ public class EmployeeWageBuilder {
                     break;
             }
             empWage = empWage + (wagePerHr * empHR);
+            day++;
+            totalWorkingHr = totalWorkingHr + empHR;
         } 
         return empWage;
 
     }
         public static void main(String[] args)
         {
-            int empWage = random_generator(20);
+            int empWage = random_generator(20, 100, 20);
             System.out.println("Monthly employee wage = " + empWage);
-            
         }
 
 }
