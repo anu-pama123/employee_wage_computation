@@ -1,26 +1,25 @@
 package com.bridgelabz;
-public class EmployeeWageBuilder {
-    public static double Daily_full_time_Employee_Wage, Daily_part_time_Employee_Wage;
-    public static final int IS_FULL_TIME = 1;
-    public static final int IS_PART_TIME = 2;
-    private static double Employee_Wage;
-    public static int Employee_wage=0;
-    private static double Employee_check;
-    public static int random_generator(int wagePerHr, int maxHr, int maxDay)// method 1
+public class EmployeeWageBuilder
+{
+    public  static final int isFullTime = 1;
+    public  static final int isPartTime = 2;
+    private  static double employeeWage;
+    private  static double employeeCheck;
+    public static int randomGenerator(int wagePerHr, int maxHr, int maxDay) // method
     {
         int empHR = 0;
         int empWage = 0;
-        int Employee_wage = 0;
         int totalWorkingHr=0;
         int day=0;
         while (totalWorkingHr < maxHr && day < maxDay)
         {
-            Employee_check = Math.floor((Math.random() * 10)) % 3;
-            switch ((int) Employee_check) {
-                case IS_FULL_TIME:
+            employeeCheck = Math.floor((Math.random() * 10)) % 3;
+            switch ((int) employeeCheck)
+            {
+                case isFullTime:
                     empHR = 8;
                     break;
-                case IS_PART_TIME:
+                case isPartTime:
                     empHR = 4;
                     break;
                 default:
@@ -28,16 +27,17 @@ public class EmployeeWageBuilder {
                     break;
             }
             empWage = empWage + (wagePerHr * empHR);
+            System.out.println("Daily employee wage = " + empWage);
             day++;
             totalWorkingHr = totalWorkingHr + empHR;
-        } 
+        }
         return empWage;
 
     }
         public static void main(String[] args)
         {
-            int empWage = random_generator(20, 100, 20);
-            System.out.println("Monthly employee wage = " + empWage);
+            employeeWage=EmployeeWageBuilder.randomGenerator(20,100,20);//method calling
+            System.out.println("Monthly employee wage = " + employeeWage);
         }
 
 }
