@@ -1,18 +1,23 @@
 package com.bridgelabz;
 
-public class CompanyEmpWage implements EmployeeWage
+public class CompanyEmpWage
 {
-    public int MaxDay;
-    public int MaxHr;
-    public int WagePerHr;
+    public final String company;
+    public final int MaxDay;
+    public final int MaxHr;
+    public final int WagePerHr;
+    public int totalEmpWage;
     public int empHR = 0;
-    CompanyEmpWage(int MaxDay, int MaxHr, int WagePerHr)
+    CompanyEmpWage(String company, int MaxDay, int MaxHr, int WagePerHr)
     {
+        this.company=company;
         this.MaxDay=MaxDay;
         this.MaxHr=MaxHr;
         this.WagePerHr=WagePerHr;
+        this.totalEmpWage=0;
     }
-    public int randomGenerator() // method
+
+    public int randomGenerator()
     {
         int empWage = 0;
         double employeeCheck = 0;
@@ -38,6 +43,15 @@ public class CompanyEmpWage implements EmployeeWage
             day++;
         }
         return empWage;
+    }
+
+    public void setTotalEmpWage(int totalEmpWage)
+    {
+        this.totalEmpWage=totalEmpWage;
+    }
+    public String toString()
+    {
+        return "Total Emp Wage for Company : " +company+"is: "+totalEmpWage;
     }
 
 }
