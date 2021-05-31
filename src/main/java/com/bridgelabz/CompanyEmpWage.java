@@ -34,6 +34,7 @@ public class CompanyEmpWage implements EmployeeWage
                     break;
             }
             empWage = empWage + (this.empHR * this.WagePerHr);
+            System.out.println(empWage);
             day++;
         }
         return empWage;
