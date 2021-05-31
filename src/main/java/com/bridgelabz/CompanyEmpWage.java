@@ -1,22 +1,21 @@
 package com.bridgelabz;
 
-public class EmployeeWageBuilderMain
+public class CompanyEmpWage
 {
-    public int MaxDay = 20;
-    public int MaxHr = 100;
-    public int WagePerHr = 20;
+    public int MaxDay;
+    public int MaxHr;
+    public int WagePerHr;
     public int empHR = 0;
-    EmployeeWageBuilderMain(int MaxDay, int MaxHr, int WagePerHr)
+    CompanyEmpWage(int MaxDay, int MaxHr, int WagePerHr)
     {
         this.MaxDay=MaxDay;
         this.MaxHr=MaxHr;
         this.WagePerHr=WagePerHr;
-        //    this.empHR=empHR;
     }
     public int randomGenerator() // method
     {
         int empWage = 0;
-        double employeeCheck;
+        double employeeCheck = 0;
         int totalWorkingHr = 0;
         int day = 0;
         while (totalWorkingHr < this.MaxHr && day < this.MaxDay)
@@ -31,7 +30,7 @@ public class EmployeeWageBuilderMain
                     this.empHR = 4;
                     break;
                 default:
-                    this.empHR = 0;
+                    this.empHR = 0; //absent
                     break;
             }
             empWage = empWage + (this.empHR * this.WagePerHr);
