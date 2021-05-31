@@ -1,6 +1,6 @@
 package com.bridgelabz;
 
-public class CompanyEmpWage
+public class CompanyEmpWage implements EmployeeWage
 {
     public int MaxDay;
     public int MaxHr;
